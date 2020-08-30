@@ -32,3 +32,21 @@ Pre-requisites - nasm, qemu - installed via package manager.
 * Changing the length or the file will result in the emulator not being able to
   boot
 * Screenshot: ![booting successful](screenshots/BootingFromHardDisk.png)
+
+## Part 2: 
+
+* `cmp` compares the values and stores a flag
+* jump instructions use that flag to determine to jump
+* List of jump instructions:
+	```asm
+	je	   ; A==B
+	jne	   ; A!=B
+	jg	   ; A >B
+	jl	   ; A <B
+	jge	   ; A>=B
+	jle	   ; A<=B
+	```
+* jump instruction is followed by a label.
+
+### Part 2 homework: 
+* Print alphabet with alternating capitalizations
