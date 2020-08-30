@@ -50,3 +50,9 @@ Pre-requisites - nasm, qemu - installed via package manager.
 
 ### Part 2 homework: 
 * Print alphabet with alternating capitalizations
+
+### Solution:
+* start with lowercase `a` and flip flop labels -- evens and odds
+* starting at `a`, `Z` is the last letter, in evens.
+* odds do not need to be compared, `90` happens in evens. then jump to exit 
+

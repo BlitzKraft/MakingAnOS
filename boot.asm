@@ -1,13 +1,21 @@
 mov ah, 0x0e ; switch to teletype mode
-mov al, 65 ; ASCII decimal value of 'A'
+mov al, 97 ; ASCII decimal value of 'a'
 int 0x10
+jmp evens;
 
-loop: 
+evens:
 	inc al
-	cmp al, 'Z' + 1
-	je exit ; jump on equals result of the comparison
+	sub al, 32 ; could be optimized using bitwise operations?
 	int 0x10
-	jmp loop ; otherwise keep looping
+	cmp al, 'Z'
+	je exit ; jump on equals result of the comparison
+	jmp odds
+
+odds:
+	inc al;
+	add al, 32
+	int 0x10
+	jmp evens
 
 exit:
 	jmp $
