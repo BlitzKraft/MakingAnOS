@@ -4,16 +4,14 @@ int 0x10
 jmp evens;
 
 evens:
-	inc al
-	sub al, 32 ; could be optimized using bitwise operations?
+	sub al, 31
 	int 0x10
 	cmp al, 'Z'
 	je exit ; jump on equals result of the comparison
 	jmp odds
 
 odds:
-	inc al;
-	add al, 32
+	add al, 33
 	int 0x10
 	jmp evens
 
